@@ -14,12 +14,10 @@ You can assume that neither firstName nor lastName will be blank
 const toLastNames = people => {
   // Solution code here...
 
-  let firstName= people.map(people => people.firstName);
-  let lastName= people.map(people => people.lastName);
-
-  return firstName + lastName;
-
-
+  let joined = people.map(person=> {
+    return `${person.firstName} ${person.lastName}`;
+  });
+  return joined;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,11 +68,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  // let num = 0;
-  // for ( let i = 0; i < arr.length; i++){
-  //   num++;
-  //   return num;
-  // }
+
+  let newArr = arr.reduce((accumulator)=>{
+    return accumulator + 1;
+  },0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,13 +133,12 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  let newArr = [];
   let swNames = arr.reduce((accumulator, value)=> {
-    return accumulator + value.name;
+    accumulator.push(value.name);
+    return accumulator;
 
-  },'');
-  newArr.push(swNames);
-  return newArr;
+  },[]);
+  return swNames;
 };
 
 /* ------------------------------------------------------------------------------------------------
