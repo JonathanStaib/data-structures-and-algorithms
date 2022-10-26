@@ -38,8 +38,8 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  let newArr = arr.slice(idx,3);
-  return newArr;
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +50,9 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  let newArr= arr.map((element)=> element.split('').join(''));
+
+  return newArr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +71,9 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i < str.length + 1; i++){
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -79,8 +85,12 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
+const wordsToCharList = (str) => {
   // Solution code here...
+  let newArr = str.split('');
+
+  return newArr;
+
 };
 
 
@@ -128,8 +138,19 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.map((ingredient)=> {
+    let arr = ingredient.split(' ');
+    arr.shift();
+    arr.shift();
+    let ingredientString = arr.join(' ');
+    result.push(ingredientString);
+
+
+  });
   return result;
+
 };
+// return result;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
