@@ -58,8 +58,8 @@ const sortByChildren = (charArray) => {
   // Solution code here...
   return charArray.sort((a,b) =>{
     a.children.length - b.children.length;
-    if(b.children.length === a.children.length){
-      b.name - a.name;
+    if(a.children.length === b.children.length){
+      a.name - b.name;
     }
   });
 };
@@ -74,7 +74,12 @@ Write a function named containsW that takes in a string. This function should us
 const containsW = (str) => {
   // Solution code here...
   let regex= /w/g;
-  return str.match(regex);
+  if(regex.test(str)){
+    return true;
+  }
+  else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +96,14 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let regex = /\d/g;
+
+  if(regex.test(input)){
+    return true;
+  }
+  else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,6 +115,14 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  let regex = /(world)/g;
+
+  if(regex.test(input)){
+    return true;
+  }
+  else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +135,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  // *** split then match for caps then join?
+  return str.match(/[A-Z][a-z]+/g) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,7 +146,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  // ***[a-j]
+  let newArr = [];
+  let regex = /^[A-J][a-z]+/;
+  arr.forEach(str => {
+    if(regex.test(str)){
+      newArr.push(str);
+    }
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
