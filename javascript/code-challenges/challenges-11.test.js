@@ -20,7 +20,7 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -76,6 +76,10 @@ const divisibleByFiveTwoToThePower = (input) => {
   // }
   // return results;
 
+  return input.map(nestedArr => {
+    return nestedArr.filter(element => element % 5 === 0 && typeof element === 'number')
+      .map(filteredElem => Math.pow(2, filteredElem));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,7 +147,7 @@ let starWarsData = [{
 let findMaleAndFemale = (data) => {
   // Solution code here...
 };
-
+// filter for male or female then use join or reduce
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
