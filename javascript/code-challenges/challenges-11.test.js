@@ -20,7 +20,7 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
