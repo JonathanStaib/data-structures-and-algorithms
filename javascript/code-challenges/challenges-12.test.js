@@ -112,8 +112,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-  let regex =  /^.?[0-9]?.?.{10}.?$/gm;
-  // let regex =  /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm;
+  // let regex =  /^.?[0-9]?.?.{10}.?$/gm;
+  let regex =  /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/gm;
   if(regex.test(phoneNumber)){
     return true;
   } else {
