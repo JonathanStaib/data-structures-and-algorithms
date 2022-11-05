@@ -20,6 +20,7 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+  return Object.entries(obj).map(value => `<li>${value.join(': ')}</li>`);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,6 +35,9 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let arr = input.flat().filter(num => num === target);
+
+  return arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,8 +150,9 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  // filter for male or female then use join or reduce
+  return data.filter(person => person.gender.includes('male')).map(newPerson => newPerson.name).join(' and ');
 };
-// filter for male or female then use join or reduce
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -156,6 +161,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  return data.reduce((shorty, next) => +shorty.height < +next.height ? shorty : next).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
