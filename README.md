@@ -25,3 +25,4 @@ To run your tests
 ## Table of Contents
 
 - [Array Insert Shift](./javascript/array-insert-shift.md/README.md)
+- [Linked List](./javascript/linked-list/README.md)
