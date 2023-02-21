@@ -52,4 +52,16 @@ describe('Linked List', () => {
 
     expect(linkedString).toEqual('{ league } -> { valorant } -> NULL');
   });
+
+  it('should find kth number in list', () => {
+    const linked = new LinkedList();
+    linked.insert(1);
+    linked.insert(2);
+    linked.insert(3);
+    linked.insert(4);
+    linked.insert(5);
+    const kthvalue = linked.kthFromLast(2);
+    expect(kthvalue).toEqual(3);
+  });
 });
+
