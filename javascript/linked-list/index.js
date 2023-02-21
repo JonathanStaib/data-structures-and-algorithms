@@ -22,6 +22,29 @@ class LinkedList {
     }
   }
 
+  kthFromLast(k) {
+
+    let len = 0;
+    let current = this.head;
+
+    while (current !== null) {
+      current = current.next;
+      len++;
+
+    }
+    if (len < k) {
+      return;
+
+    } else {
+      current = this.head;
+      for (let i = 1; i < len - k; i++) {
+        current = current.next;
+      }
+    }
+    return current.value;
+
+  }
+
   toString() {
 
     let current = this.head;
