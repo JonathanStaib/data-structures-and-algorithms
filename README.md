@@ -28,3 +28,4 @@ To run your tests
 - [Linked List](./javascript/linked-list/README.md)
 - [Linked List Insertions](./javascript/linked-list-insertions/README.md)
 - [Linked List KTH](./javascript/linked-list/CC7-README.md)
+- [Linked List Zip](./javascript/linked-list/CC8-README.md)
