@@ -9,7 +9,6 @@
   "description": "See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "NODE_ENV=test jest --verbose --coverage",
     "test-watch": "NODE_ENV=test jest --watchAll --verbose --coverage"
