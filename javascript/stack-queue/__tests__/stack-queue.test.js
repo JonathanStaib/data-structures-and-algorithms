@@ -167,6 +167,7 @@ describe('Stack', () => {
 
     expect(queue.isEmpty(true));
     // expect(() => {queue.pop();}).toThrow('empty stack');
+    console.log(peekedVal);
     expect(dequeueVal).toEqual(null);
     expect(peekedVal).toEqual(null || undefined);
 
