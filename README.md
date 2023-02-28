@@ -30,3 +30,4 @@ To run your tests
 - [Linked List KTH](./javascript/linked-list/CC7-README.md)
 - [Linked List Zip](./javascript/linked-list/CC8-README.md)
 - [Stack and Queue](./javascript/stack-queue/README.md)
+- [Stack Queue Pseudo](./javascript/stack-queue/cc11.md)
