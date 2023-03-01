@@ -173,4 +173,35 @@ describe('Stack', () => {
 
   });
 
+  it('returns true if brackets are balanced', () => {
+    let stack = new Stack();
+
+    let str = '{}(){}';
+    stack.validateBrackets(str);
+
+    expect(stack.isEmpty(true));
+
+  });
+
+  it('returns false if brackets are not balanced', () => {
+    let stack = new Stack();
+
+    let str = '[({}]';
+    stack.validateBrackets(str);
+
+    expect(stack.isEmpty(false));
+
+  });
+
+  it('returns true if brackets are balanced and have extra characters', () => {
+    let stack = new Stack();
+
+    let str = '()[[Extra Characters]]';
+    stack.validateBrackets(str);
+
+    expect(stack.isEmpty(true));
+
+  });
+
 });
+
