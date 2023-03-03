@@ -39,7 +39,7 @@ class Stack{
       ']': '[',
       '}': '{'
     };
-  
+
     for (let i = 0; i < str.length; i++) {
       if (open.includes(str[i])) {
         stack.push(str[i]);
