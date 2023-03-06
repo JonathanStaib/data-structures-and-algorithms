@@ -62,7 +62,20 @@ class Tree{
     traverse(this.root);
     return array;
   }
+
+  treeMax() {
+    let max = 0;
+    if (!this.root) return null;
+    const traverse = (node) => {
+      if (node.value > max) max = node.value;
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return max;
+  }
 }
+
 
 
 let tree = new Tree();

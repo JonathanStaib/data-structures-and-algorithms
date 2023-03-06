@@ -4,6 +4,14 @@ const { Node, Tree } = require('./index');
 
 describe('tree', () => {
 
+  // let tree = new Tree();
+  // tree.root = new Node(10);
+  // tree.root.left = new Node(5);
+  // tree.root.right = new Node(15);
+  // tree.root.left.left = new Node(1);
+  // tree.root.left.right = new Node(8);
+  // tree.root.right.right = new Node(17);
+
   it('can be created a tree with a single node', () => {
     let tree1 = new Tree();
     tree1.root = new Node(3);
@@ -62,4 +70,24 @@ describe('tree', () => {
 
     expect(postResults).toEqual([1, 8, 5, 17, 15, 10]);
   });
+
+  it('will find the max in a tree', () => {
+
+    const tree = new Tree();
+    expect(tree.treeMax()).toBeNull();
+    tree.root = new Node(10);
+    expect(tree.treeMax()).toEqual(10);
+    tree.root.left = new Node(5);
+    expect(tree.treeMax()).toEqual(10);
+    tree.root.right = new Node(15);
+    expect(tree.treeMax()).toEqual(15);
+    tree.root.left.left = new Node(1);
+    expect(tree.treeMax()).toEqual(15);
+    tree.root.left.right = new Node(8);
+    expect(tree.treeMax()).toEqual(15);
+    tree.root.left.right = new Node(17);
+    expect(tree.treeMax()).toEqual(17);
+
+  });
+
 });
