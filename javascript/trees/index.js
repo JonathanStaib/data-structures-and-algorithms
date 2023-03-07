@@ -74,6 +74,24 @@ class Tree{
     traverse(this.root);
     return max;
   }
+
+  breadthFirst(tree){
+    const result = [];
+    const queue = [tree.root];
+
+    while(queue.length > 0){
+      const current = queue.shift();
+
+      result.push(current.value);
+      if(current.left !== null){
+        queue.push(current.left);
+      }
+      if(current.right !==null){
+        queue.push(current.right);
+      }
+    }
+    return result;
+  }
 }
 
 
