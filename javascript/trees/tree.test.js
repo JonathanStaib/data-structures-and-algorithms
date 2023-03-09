@@ -104,4 +104,18 @@ describe('tree', () => {
     expect(breadthResults).toEqual([10, 5, 15, 1, 8, 17]);
   });
 
+  it('Fizz Buzz returns new tree', () => {
+    let tree = new Tree();
+    tree.root = new Node(3);
+    tree.root.left = new Node(5);
+    tree.root.right = new Node(1);
+    tree.root.left.left = new Node(15);
+
+    let test = tree.fizzBuzzTree(tree);
+    expect(test.root.value).toEqual('fizz');
+    expect(test.root.left.value).toEqual('buzz');
+    expect(test.root.right.value).toEqual(1);
+    expect(test.root.left.left.value).toEqual('fizzBuzz');
+  });
+
 });
