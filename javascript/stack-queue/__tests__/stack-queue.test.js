@@ -1,6 +1,6 @@
 'use strict';
 
-const { Stack, Queue} = require('..');
+const { Stack, Queue, PseudoQueue} = require('..');
 
 
 describe('Stack', () => {
@@ -202,6 +202,15 @@ describe('Stack', () => {
     expect(stack.isEmpty(true));
 
   });
+
+  // it('lets us join the queue many times!', () => {
+  //   let queue = new PseudoQueue();
+  //   queue.enqueue(1);
+
+  //   expect(queue.enqueueStack.value).toEqual(1);
+
+
+  // });
 
 });
 
