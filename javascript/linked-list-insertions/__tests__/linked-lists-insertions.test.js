@@ -31,4 +31,15 @@ describe('Linked List', () => {
     expect(linked.head.next.next.next.next).toBeNull();
   });
 
+  it('should append at the end of list', () => {
+    const linked = new LinkedList();
+    linked.insert(1);
+    linked.append(2);
+    linked.append(4);
+    linked.insertAfter(3, 2);
+
+    expect(linked.head.next.value).toEqual(2);
+    expect(linked.head.next.next.value).toEqual(3);
+  });
+
 });

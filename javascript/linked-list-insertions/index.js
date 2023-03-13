@@ -16,7 +16,15 @@ class LinkedList {
     }
     current.next = new Node(value, null);
   }
+
+  insertAfter(newValue, beforeNode){
+
+    let newNode = new Node(newValue, null);
+    newNode.next = beforeNode.next;
+    beforeNode.next = newNode;
+  }
 }
+
 
 class Node {
   constructor(value, next){

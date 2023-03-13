@@ -104,4 +104,34 @@ class Queue {
   }
 }
 
-module.exports = { Stack, Queue };
+class PseudoQueue{
+  constructor(){
+    this.enqueueStack = new Stack();
+    this.dequeueStack = new Stack();
+  }
+
+  enqueue(value){
+    if(this.dequeueStack.isEmpty())this.enqueueStack.push(value);
+
+    if(!this.enqueueStack.isEmpty() && !this.dequeueStack.isEmpty()){
+      while(!this.dequeueStack.isEmpty()){
+        this.enqueueStack.push(this.dequeueStack.pop());
+      }
+      this.enqueueStack.push(value)
+    }
+  }
+
+  qequeue(){
+    if(this.enqueueStack.isEmpty() && this.dequeueStack.isEmpty())throw new Error(`error: the queue is empty`);
+    if(this.qequeueStack.isEmpty() && !this.enqueueStack.isEmpty()){
+      while(!this.enqueueStack.isEmpty()){
+        this.dequeueStack.push(this.enqueueStack.pop());
+      }
+      this.dequeueStack.pop();
+    }
+    if(!this.dequeueStack.isEmpty())this.dequeueStack.pop();
+
+  }
+}
+
+module.exports = { Stack, Queue, PseudoQueue };
