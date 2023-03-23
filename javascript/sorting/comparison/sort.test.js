@@ -1,7 +1,8 @@
 'use strict';
 
+const { it } = require('test');
 const { Movies } = require('./movies');
-const { sortTitle, sortYear } = require('./sort');
+const { sortTitle, sortYear, compareYear } = require('./sort');
 
 describe('Sorters', () => {
   it('can sort movies by year', () => {
@@ -35,4 +36,18 @@ describe('Sorters', () => {
       'Valkyrie',
     ]);
   });
+
+  it('can compare movies', () => {
+
+    expect(compareYear(
+      { year: 1 },
+      { year: 0 },
+    )).toBelessThan(0);
+
+    expect(compareYear(
+      { year: 0 },
+      { year: 1 },
+    )).toBeGreaterThan(0);
+  });
+
 });
