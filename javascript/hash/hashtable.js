@@ -28,6 +28,7 @@ class HashTable {
       bucket.add(data);
     } else{
       let bucket = data;
+      this.buckets[position].push(bucket);
     }
   }
 
@@ -38,6 +39,10 @@ class HashTable {
       let bucket = this.buckets[position];
       return bucket.value;
     }
+  }
+
+  keys(){
+    let keys = this.buckets.map([position]);
   }
 
   has(key){
