@@ -9,3 +9,5 @@ We needed to implement our own Graph with many different methods. We followed al
 ## Approach & Efficiency
 
 The approach that we took as a class was to first create our Graph class with Vertex and Edge classes as well. From here we made our methods to utilize this Graph. We added in addVertex, addDirectedEdge, getNEightbors, getNodes, breadthFirst, depthFirst and size methods. From here we tested with console logging and running node index.js within our graph folder.
+
+Reference: Ryan Gallaway Lecture
