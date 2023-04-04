@@ -39,13 +39,14 @@ class Graph {
     // return all the keys
   }
 
-  breadthFirst(root, callback){
+  breadthFirst(node, callback) {
+    const root = node;
     const queue = [root];
     const visited = new Set();
     visited.add(root);
     let current = null;
 
-    while(queue.length){
+    while (queue.length) {
       current = queue.pop();
 
       if(callback){
@@ -53,8 +54,8 @@ class Graph {
       }
 
       const neighbors = this.getNeighbors(current);
-      for(let edge of neighbors){
-        if(!visited.has(edge.vertex)){
+      for (let edge of neighbors) {
+        if (!visited.has(edge.vertex)) {
           visited.add(edge.vertex);
           queue.unshift(edge.vertex);
         }
@@ -116,3 +117,5 @@ graph.addDirectedEdge(F, H);
 graph.addDirectedEdge(F, E);
 
 graph.breadthFirst(A, console.log);
+
+module.exports = Graph;
