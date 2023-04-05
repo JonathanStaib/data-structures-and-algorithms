@@ -106,6 +106,19 @@ class Tree{
     traverse(root);
     return returnTree;
   }
+
+  treeSum(tree) {
+    let sum = 0;
+
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      sum = sum + node.value;
+    };
+
+    traverse(tree.root);
+    return sum;
+  }
 }
 
 
