@@ -25,7 +25,8 @@ describe('graph', () => {
     graph.addDirectedEdge(F, E);
 
     let response = graph.breadthFirst(A);
+    let stringifiedRes = JSON.stringify(response);
 
-    expect(response).toEqual();
+    expect(stringifiedRes).toEqual();
   });
 });
