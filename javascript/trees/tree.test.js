@@ -118,4 +118,28 @@ describe('tree', () => {
     expect(test.root.left.left.value).toEqual('fizzBuzz');
   });
 
+  it('will get the sum of tree', () => {
+    let tree = new Tree();
+    tree.root = new Node(4);
+    tree.root.left = new Node(10);
+    tree.root.right = new Node(13);
+    tree.root.left.left = new Node(22);
+
+    let sum = tree.treeSum(tree);
+
+    expect(sum).toEqual(49);
+  });
+
+  it('treeSum works with negative numbers', () => {
+    let tree = new Tree();
+    tree.root = new Node(-4);
+    tree.root.left = new Node(-10);
+    tree.root.right = new Node(-13);
+    tree.root.left.left = new Node(-22);
+
+    let sum = tree.treeSum(tree);
+
+    expect(sum).toEqual(-49);
+  });
+
 });
